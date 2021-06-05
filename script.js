@@ -1,6 +1,6 @@
-window.onload = function() {
-    alert("javaScript подлючён!");
-}
+// window.onload = function() {
+//     alert("javaScript подлючён!");
+// }
 // проверка данных формы
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
@@ -52,3 +52,29 @@ re.test(email) ? result = 'email указан верно':result = 'email ука
 }
     // Вывод в консоль разработчика
 console.log('anystring@anystring.anystring');
+
+
+$(document).ready(function() {
+  $('button').click(function(e) {
+    // Stop form from sending request to server
+    e.preventDefault();
+
+    var btn = $(this);
+
+    $.ajax({
+      method: "POST",
+      url: "https://jsonplaceholder.typicode.com/posts",
+      dataType: "json",
+      data: {
+        "tables": btn.val(),
+        'input': $('input').val()
+      },
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(er) {
+        console.log(er);
+      }
+    });
+  })
+});
