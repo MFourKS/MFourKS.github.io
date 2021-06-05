@@ -14,8 +14,10 @@
 				padding: 15px;
 		}
 	</style>
-		<script type="text/javascript">
-			//alert("Hello!");
+		<script src="script.js" type="text/javascript" 
+		script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+		</script>
+
 		</script>
 	</head>
 
@@ -26,6 +28,7 @@
 
 <section>
 
+
 		<div id="box" class="block">
 		
 			<span class="s1">
@@ -33,14 +36,15 @@
 				<center><b>Пожалуйста, войдите под своими учетными данными<br> для продолжения работы</b></center>
 				<br><br>
 			</span>
-			<form action="frame_one.html" method="POST">
+<!-- 			Проверка формы при помощи js -->
+			<form action="frame_one.html" name="myForm" method="post">
 			<span class="s2">
 				Email адрес<br>
-				<input type="email" name="email" value="" placeholder="Введите email" size="80"><br><br><br>
+				<input id='email'type="email" name="email" value="" placeholder="Введите email" size="80"><br><br><br>
 				Пароль<br>
 				<input type="passvord" required name="passvord" value="" placeholder="Введите пароль" size="80"><br><br>
 			</span>
-				<center><button type="submit" class="s3">Вход</button><br><br>
+				<center><button id='validate' type="submit" class="s3" onClick="clickButton();">Вход</button><br><br>
 				<span class="s1"><a href="frame_two.html">Или продолжить как гость</a></span></center>
 		</form>
 		</div>
